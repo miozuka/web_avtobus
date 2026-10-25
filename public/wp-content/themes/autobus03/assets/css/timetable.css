@@ -1,0 +1,501 @@
+.timetable-page {
+    background: var(--color-surface);
+    padding-block: 72px 96px;
+}
+main.timetable-page .timetable-container {
+    max-width: 1200px;
+}
+main.timetable-page .timetable-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 24px;
+    margin-bottom: 20px;
+    border-radius: 18px;
+    background: var(--color-background);
+    box-shadow: var(--shadow-soft);
+}
+main.timetable-page .timetable-number {
+    display: grid;
+    place-items: center;
+    min-width: 64px;
+    height: 64px;
+    padding: 10px;
+    border-radius: 14px;
+    background: #286775;
+    color: #fff;
+    font-weight: 800;
+    font-size: 1.6em;
+}
+main.timetable-page .timetable-heading {
+    flex: 1;
+    min-width: 0;
+}
+main.timetable-page .timetable-heading .pill {
+    margin-bottom: 8px;
+    font-size: 0.72em;
+}
+main.timetable-page .timetable-heading .pill::before {
+    content: '';
+    width: 9px;
+    height: 9px;
+    background: currentColor;
+    border-radius: 50%;
+    opacity: 0.5;
+}
+main.timetable-page .timetable-heading h1 {
+    font-size: clamp(22px, 2vw, 32px);
+    line-height: 1.2;
+    margin-bottom: 8px;
+}
+main.timetable-page .timetable-heading > p:last-child {
+    font-size: 0.95em;
+}
+main.timetable-page .timetable-print {
+    border: 1px solid var(--color-border);
+    background: var(--color-background);
+    color: var(--color-text);
+    gap: 8px;
+    min-height: 44px;
+    padding: 9px 14px;
+    border-radius: 10px;
+    font-size: 0.82em;
+    font-weight: 600;
+    line-height: 1.4;
+    box-shadow: none;
+    white-space: normal;
+    max-width: 100%;
+    flex-wrap: wrap;
+}
+main.timetable-page .timetable-print .icon {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+}
+main.timetable-page .timetable-print:hover {
+    background: var(--color-surface);
+    border-color: #286775;
+    transform: none;
+}
+main.timetable-page .timetable-graph {
+    padding: 24px;
+    border-radius: 18px;
+    background: var(--color-background);
+    box-shadow: var(--shadow-soft);
+}
+main.timetable-page .timetable-control-label {
+    color: var(--color-muted);
+    font-size: 0.75em;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+main.timetable-page .timetable-directions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    gap: 10px;
+    margin-top: 14px;
+}
+main.timetable-page .timetable-direction {
+    padding: 10px 14px;
+    min-height: 44px;
+    max-width: min(100%, 380px);
+    border: 1px solid var(--color-border);
+    border-radius: 10px;
+    background: var(--color-background);
+    color: var(--color-text);
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.9em;
+    line-height: 1.4;
+    overflow-wrap: anywhere;
+    transition:
+        background 0.15s,
+        border-color 0.15s;
+}
+main.timetable-page .timetable-direction:hover {
+    border-color: #286775;
+}
+main.timetable-page .timetable-direction.is-active {
+    background: #286775;
+    color: #fff;
+    border-color: #286775;
+}
+main.timetable-page .timetable-direction-select {
+    display: none;
+    width: 100%;
+    min-width: 0;
+    min-height: 48px;
+    margin-top: 10px;
+    padding: 10px 12px;
+    border: 1px solid var(--color-border);
+    border-radius: 10px;
+    background: var(--color-background);
+    color: var(--color-text);
+    font: inherit;
+    font-weight: 600;
+}
+:is(.timetable-direction, .timetable-day, .timetable-direction-select):focus-visible {
+    outline: 3px solid var(--color-secondary);
+    outline-offset: 3px;
+}
+main.timetable-page .timetable-day-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin-block: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--color-border);
+}
+main.timetable-page .timetable-day-controls {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+main.timetable-page .timetable-days {
+    display: flex;
+    padding: 4px;
+    background: var(--color-surface);
+    border-radius: 10px;
+}
+main.timetable-page .timetable-day {
+    border: 0;
+    background: transparent;
+    color: var(--color-muted);
+    font-weight: 600;
+    font-size: 0.88em;
+    padding: 8px 12px;
+    border-radius: 7px;
+    min-height: 44px;
+}
+main.timetable-page .timetable-day.is-active {
+    color: #286775;
+    background: var(--color-background);
+    box-shadow: 0 2px 6px #122a4b0b;
+}
+main.timetable-page .timetable-day-controls,
+main.timetable-page .timetable-days {
+    max-width: 100%;
+}
+main.timetable-page .timetable-days {
+    flex-wrap: wrap;
+}
+main.timetable-page .timetable-day {
+    flex: 0 1 auto;
+    max-width: 100%;
+}
+main.timetable-page .timetable-status {
+    display: flex;
+    align-items: center;
+    min-height: 40px;
+    padding: 8px 12px;
+    border-radius: 8px;
+    background: var(--color-surface);
+    font-size: 0.82em;
+    line-height: 1.4;
+    max-width: 100%;
+    text-align: left;
+    overflow-wrap: anywhere;
+}
+main.timetable-page .timetable-status::before {
+    content: '';
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: var(--color-primary);
+    margin-right: 8px;
+}
+main.timetable-page .timetable-panel-heading {
+    font-size: 1.4em;
+    margin-block: 36px 24px;
+}
+main.timetable-page.timetable-interactive .timetable-panel-heading {
+    display: none;
+}
+main.timetable-page .timetable-times {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 0;
+    min-width: 0;
+}
+main.timetable-page .timetable-departures {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    align-items: start;
+    gap: 10px;
+    margin-top: 12px;
+}
+main.timetable-page .timetable-hour {
+    height: 100%;
+    padding: 12px;
+    margin-bottom: 0;
+    border: 1px solid var(--color-border);
+    border-radius: 10px;
+    border-inline-start: 3px solid #b7d2d8;
+    background: var(--color-surface);
+    min-width: 0;
+    break-inside: avoid;
+}
+main.timetable-page .timetable-hour:last-child {
+    margin-bottom: 0;
+}
+main.timetable-page .timetable-times li {
+    background: var(--color-background);
+    border: 1px solid var(--color-border);
+    display: grid;
+    place-items: center;
+    border-radius: 7px;
+    padding: 8px 11px;
+    min-height: 40px;
+    line-height: 1.3;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+}
+main.timetable-page .timetable-times time {
+    font-size: 1.02em;
+    color: var(--color-text);
+}
+main.timetable-page .timetable-note {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+    padding-top: 20px;
+    margin-top: 24px;
+    border-top: 1px solid var(--color-border);
+    font-size: 0.9em;
+    line-height: 1.6;
+}
+main.timetable-page .timetable-note > div {
+    text-align: right;
+    flex-shrink: 0;
+}
+main.timetable-page .timetable-note a {
+    color: var(--color-primary);
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+main.timetable-page .timetable-empty {
+    padding-block: 36px;
+}
+html[data-contrast]:not([data-contrast='normal'])
+    :is(.timetable-number, .timetable-direction, .timetable-day) {
+    background: var(--color-background);
+    color: var(--color-text);
+    border: 1px solid var(--color-border);
+}
+html[data-contrast]:not([data-contrast='normal'])
+    main.timetable-page
+    :is(.timetable-direction.is-active, .timetable-day.is-active) {
+    background: var(--color-text);
+    color: var(--color-background);
+}
+@media (max-width: 1500px) {
+    main.timetable-page .timetable-header,
+    main.timetable-page .timetable-graph {
+        padding: 24px;
+    }
+    main.timetable-page .timetable-header {
+        gap: 20px;
+    }
+    main.timetable-page .timetable-number {
+        min-width: 64px;
+        height: 64px;
+    }
+    main.timetable-page .timetable-times li {
+        padding: 8px 11px;
+    }
+}
+@media (max-width: 1199px) {
+    main.timetable-page .timetable-header {
+        flex-wrap: wrap;
+    }
+    main.timetable-page .timetable-print {
+        margin-left: 0;
+    }
+    main.timetable-page .timetable-day-row {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+    main.timetable-page .timetable-status {
+        max-width: 100%;
+        text-align: left;
+    }
+    main.timetable-page .timetable-note {
+        flex-direction: column;
+    }
+    main.timetable-page .timetable-note > div {
+        text-align: left;
+        flex-shrink: 1;
+    }
+}
+@media (max-width: 767px) {
+    .timetable-page {
+        padding-block: 32px 64px;
+    }
+    main.timetable-page .timetable-header,
+    main.timetable-page .timetable-graph {
+        padding: 18px;
+        border-radius: 14px;
+    }
+    main.timetable-page .timetable-header {
+        margin-bottom: 16px;
+        gap: 14px;
+        align-items: flex-start;
+        display: grid;
+        grid-template-columns: auto minmax(0, 1fr);
+    }
+    main.timetable-page .timetable-number {
+        min-width: 52px;
+        height: 52px;
+        border-radius: 12px;
+        font-size: 1.4em;
+    }
+    main.timetable-page .timetable-heading {
+        flex: 1;
+    }
+    main.timetable-page .timetable-heading h1 {
+        font-size: 23px;
+    }
+    main.timetable-page .timetable-print {
+        margin-left: 0;
+        grid-column: 1 / -1;
+        justify-self: start;
+    }
+    main.timetable-page .timetable-directions {
+        display: none;
+    }
+    main.timetable-page .timetable-direction-select {
+        display: block;
+    }
+    main.timetable-page .timetable-departures {
+        gap: 8px;
+    }
+    main.timetable-page .timetable-hour {
+        padding: 10px;
+    }
+    main.timetable-page .timetable-direction {
+        padding: 10px 14px;
+    }
+    main.timetable-page .timetable-day-controls {
+        gap: 10px;
+    }
+    main.timetable-page .timetable-times {
+        gap: 8px;
+    }
+    main.timetable-page .timetable-times li {
+        padding: 8px 10px;
+        min-height: 40px;
+        border-radius: 7px;
+    }
+    main.timetable-page .timetable-note {
+        margin-top: 20px;
+        padding-top: 18px;
+        gap: 12px;
+    }
+}
+@media (max-width: 479px) {
+    main.timetable-page .timetable-header,
+    main.timetable-page .timetable-graph {
+        padding: 16px;
+    }
+    main.timetable-page .timetable-directions {
+        gap: 8px;
+    }
+    main.timetable-page .timetable-direction {
+        max-width: 100%;
+    }
+    main.timetable-page .timetable-day {
+        padding: 8px;
+        flex: 1 1 auto;
+    }
+    main.timetable-page .timetable-heading .pill {
+        font-size: 12px;
+    }
+    main.timetable-page .timetable-heading h1 {
+        font-size: 22px;
+    }
+}
+@media print {
+    @page {
+        size: A4 portrait;
+        margin: 12mm;
+    }
+    .site-header,
+    .site-footer,
+    .access-panel,
+    .skip-link,
+    main.timetable-page .timetable-print,
+    main.timetable-page .timetable-controls,
+    #wpadminbar {
+        display: none !important;
+    }
+    .timetable-page {
+        padding: 0;
+        background: white;
+        color: black;
+    }
+    main.timetable-page .timetable-container {
+        max-width: none;
+        padding: 0;
+    }
+    main.timetable-page .timetable-header,
+    main.timetable-page .timetable-graph {
+        padding: 0;
+        border: 0;
+        box-shadow: none;
+        margin-bottom: 8mm;
+    }
+    main.timetable-page .timetable-heading h1 {
+        font-size: 20pt;
+    }
+    main.timetable-page .timetable-number {
+        min-width: 16mm;
+        height: 16mm;
+        font-size: 18pt;
+        background: white;
+        color: black;
+        border: 1px solid black;
+    }
+    main.timetable-page .timetable-heading .pill {
+        color: black;
+        background: white;
+    }
+    main.timetable-page.timetable-interactive .timetable-panel-heading {
+        display: block;
+        font-size: 12pt;
+    }
+    main.timetable-page .timetable-times {
+        gap: 2mm;
+    }
+    main.timetable-page .timetable-departures {
+        display: block;
+    }
+    main.timetable-page .timetable-hour {
+        height: auto;
+        padding: 2mm;
+        margin-bottom: 2mm;
+        background: white;
+    }
+    main.timetable-page .timetable-times li {
+        min-height: 0;
+        font-size: 10pt;
+        padding: 1mm 2mm;
+        border-radius: 1mm;
+    }
+    main.timetable-page .timetable-note {
+        margin-top: 5mm;
+        padding-top: 3mm;
+        font-size: 9pt;
+    }
+    main.timetable-page .timetable-note a {
+        color: black;
+    }
+}

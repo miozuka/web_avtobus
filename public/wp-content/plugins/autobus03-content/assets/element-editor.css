@@ -1,0 +1,19 @@
+#agm-element-select{position:fixed;z-index:99991;bottom:18px;left:50%;transform:translateX(-50%);border:1px solid #9bb1cc;border-radius:12px;padding:12px 18px;background:white;color:#163b68;box-shadow:0 5px 20px #102b4820;font:600 14px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;cursor:pointer}
+#agm-element-select[hidden],#agm-element-outline[hidden],#agm-element-inspector[hidden]{display:none!important}
+#agm-element-select[aria-pressed=true]{background:#155bb0;color:white;border-color:#155bb0}
+#agm-element-outline{position:fixed;z-index:99987;pointer-events:none;border:2px solid #246cc4;box-shadow:0 0 0 3px #246cc421;border-radius:5px;box-sizing:border-box}
+body.agm-selecting-element #agm-edit-overlays{visibility:hidden}
+body.agm-selecting-element main *,body.agm-selecting-element .site-header *,body.agm-selecting-element .site-footer *{cursor:crosshair!important}
+body.agm-selecting-element iframe:not(#agm-edit-frame){pointer-events:none}
+#agm-edit-tools .agm-element-help{padding:10px;border-radius:8px;background:#edf4fd;color:#25476d}
+#agm-element-inspector{border:1px solid #94afd0;border-radius:10px;padding:12px;margin:12px 0;background:#f7faff}
+#agm-element-inspector h3{margin-top:0}
+#agm-element-inspector button,#agm-edit-tools .agm-cookie-preview-task{width:100%;background:white;border:1px solid #b5c7dd;color:#16497f;padding:9px 11px;margin:5px 0;border-radius:8px;font:inherit;text-align:left}
+#agm-element-inspector #agm-element-caption{font-size:12px;overflow-wrap:anywhere;max-height:100px;overflow:auto}
+body.agm-cookie-preview .cookie-notice{display:block!important;z-index:99985}
+body.agm-focus-fields .agm-setting-field:not(.agm-selected-field){display:none}
+body.agm-focus-fields .agm-workspace>h1,body.agm-focus-fields .agm-workspace>p{display:none}
+body.agm-focus-fields .agm-admin-panel>h2{margin:0 0 12px;font-size:17px}
+.agm-show-all-fields{margin-bottom:18px!important}
+.agm-chosen-input{outline:2px solid #2670c6!important;outline-offset:3px}
+@media(max-width:780px){#agm-element-select{left:12px;right:12px;bottom:65px;transform:none;text-align:center;padding:9px 12px;font-size:13px}}

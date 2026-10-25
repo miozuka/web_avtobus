@@ -1,0 +1,347 @@
+.agm-workspace {
+    max-width: 1320px;
+}
+.agm-workspace p {
+    line-height: 1.65;
+}
+.agm-workspace-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+.agm-workspace-heading h1 {
+    margin: 0;
+    font-size: 28px;
+    line-height: 1.25;
+}
+.agm-admin-eyebrow {
+    margin-bottom: 6px;
+    color: #506071;
+    font-weight: 600;
+}
+.agm-admin-help {
+    clear: both;
+    box-sizing: border-box;
+    border: 1px solid #c7d7e7;
+    border-left: 4px solid #2271b1;
+    border-radius: 5px;
+    background: #f4f8fc;
+    padding: 16px 20px;
+    margin: 20px 0;
+    max-width: 1320px;
+    line-height: 1.6;
+}
+.agm-admin-help p {
+    margin: 5px 0 10px;
+}
+.agm-admin-help p:last-child {
+    margin-bottom: 0;
+}
+#agm-task-search {
+    display: block;
+    width: 100%;
+    max-width: 680px;
+    min-height: 44px;
+    margin-top: 8px;
+}
+.agm-task-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+    margin: 20px 0;
+}
+.agm-task-card {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    border: 1px solid #d5dce3;
+    border-radius: 8px;
+    background: white;
+    padding: 22px;
+    min-width: 0;
+}
+.agm-task-card[hidden] {
+    display: none;
+}
+.agm-task-card-head {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.agm-task-card-head h2 {
+    font-size: 18px;
+    margin: 0;
+    line-height: 1.4;
+}
+.agm-task-card-head .dashicons {
+    color: #2271b1;
+    flex-shrink: 0;
+}
+.agm-task-card p {
+    margin: 0;
+}
+.agm-task-count {
+    font-size: 12px;
+    color: #50575e;
+}
+.agm-task-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin-top: auto;
+}
+.agm-settings-layout {
+    display: grid;
+    grid-template-columns: 260px minmax(0, 1fr);
+    gap: 20px;
+    align-items: start;
+}
+.agm-settings-nav {
+    border: 1px solid #d5dce3;
+    border-radius: 8px;
+    padding: 18px;
+    background: #fff;
+}
+.agm-settings-nav input {
+    width: 100%;
+    margin-top: 6px;
+}
+.agm-settings-nav ul {
+    margin-bottom: 0;
+}
+.agm-settings-nav a {
+    display: block;
+    line-height: 1.5;
+    padding: 9px 10px;
+    text-decoration: none;
+    border-radius: 4px;
+    overflow-wrap: anywhere;
+}
+.agm-settings-nav a[aria-current] {
+    background: #eaf2fa;
+    font-weight: 600;
+    color: #135e96;
+}
+.agm-settings-nav a:hover {
+    background: #f4f7fa;
+}
+.agm-admin-panel {
+    border: 1px solid #d5dce3;
+    border-radius: 8px;
+    background: #fff;
+    padding: 22px;
+    margin-bottom: 18px;
+    min-width: 0;
+}
+.agm-admin-panel > h2 {
+    margin-top: 0;
+}
+.agm-admin-panel > summary {
+    cursor: pointer;
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 1.5;
+}
+.agm-admin-panel[open] > summary {
+    margin-bottom: 20px;
+}
+.agm-setting-field {
+    margin: 20px 0;
+}
+.agm-setting-field > label {
+    display: block;
+    margin-bottom: 8px;
+    line-height: 1.5;
+}
+.agm-setting-field textarea,
+.agm-setting-field > input:not([type='checkbox']),
+.agm-setting-field > select {
+    width: 100%;
+    max-width: 100%;
+    min-height: 38px;
+    box-sizing: border-box;
+}
+.agm-setting-field textarea {
+    resize: vertical;
+}
+.agm-inline-check {
+    display: block !important;
+    margin-top: 12px;
+}
+.agm-admin-save {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    padding: 18px 0 6px;
+    border-top: 1px solid #dcdcde;
+}
+.agm-admin-save .submit {
+    margin: 0;
+}
+.agm-media-preview img {
+    display: block;
+    max-width: 180px;
+    height: auto;
+    margin-bottom: 10px;
+}
+.agm-workspace-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 20px 0;
+}
+.agm-repeater-row {
+    border: 1px solid #dcdcde;
+    background: #fafbfc;
+    border-radius: 6px;
+    margin: 12px 0;
+    padding: 14px;
+}
+.agm-repeater-row > summary {
+    cursor: pointer;
+    line-height: 1.5;
+    font-weight: 600;
+    overflow-wrap: anywhere;
+}
+.agm-repeater-row[open] > summary {
+    margin-bottom: 16px;
+}
+.agm-repeater-field {
+    display: block;
+    margin: 12px 0;
+    line-height: 1.5;
+}
+.agm-repeater-field input,
+.agm-repeater-field textarea {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100%;
+    margin-top: 6px;
+    resize: vertical;
+}
+.agm-repeater-actions {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 16px 0 4px;
+}
+.agm-repeater-actions .button-link-delete {
+    margin-left: auto;
+}
+.agm-repeater-extra {
+    margin: 15px 0;
+}
+.agm-repeater-extra > summary {
+    cursor: pointer;
+}
+.agm-simple-card-page:not(.agm-full-editor) #postdivrich {
+    display: none;
+}
+.agm-simple-card-page #postexcerpt textarea {
+    min-height: 110px;
+}
+.agm-simple-card-page #agm_details .inside > p {
+    margin-bottom: 18px;
+}
+.agm-simple-card-page #agm_details :is(input:not([type='checkbox']), select, textarea) {
+    max-width: 100%;
+}
+.agm-simple-card-page #agm_details select {
+    min-width: 200px;
+}
+.agm-simple-card-page #agm_details textarea {
+    resize: vertical;
+}
+.agm-simple-card-page #agm_card_position input {
+    display: block;
+    margin-top: 8px;
+}
+.agm-simple-card-page .column-agm_card_order {
+    width: 80px;
+}
+.agm-simple-card-page .column-agm_card_info {
+    width: 30%;
+}
+@media (max-width: 1180px) {
+    .agm-task-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .agm-settings-layout {
+        grid-template-columns: 220px minmax(0, 1fr);
+    }
+}
+@media (max-width: 782px) {
+    .agm-workspace-heading h1 {
+        font-size: 24px;
+    }
+    .agm-task-grid {
+        grid-template-columns: 1fr;
+    }
+    .agm-task-card,
+    .agm-admin-panel {
+        padding: 16px;
+    }
+    .agm-settings-layout {
+        grid-template-columns: 1fr;
+    }
+    .agm-settings-nav ul {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 4px;
+    }
+    .agm-settings-nav li {
+        margin: 0;
+        flex: 1 1 160px;
+    }
+    .agm-settings-nav a {
+        padding: 8px;
+    }
+    .agm-admin-help {
+        padding: 14px;
+    }
+    .agm-setting-field > input,
+    .agm-setting-field textarea {
+        font-size: 16px;
+    }
+    .agm-repeater-row {
+        padding: 12px;
+    }
+    .agm-simple-card-page #agm_details select {
+        min-width: 0;
+        width: 100%;
+    }
+}
+
+.agm-workspace-context {
+    margin: 18px 0;
+}
+.agm-workspace-context label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 7px;
+}
+.agm-workspace-context select {
+    width: 100%;
+    max-width: 680px;
+    min-height: 40px;
+}
+
+.agm-card-field {
+    margin: 18px 0;
+}
+.agm-card-field > label {
+    display: inline-block;
+    margin-bottom: 7px;
+}
+.agm-document-field {
+    margin-top: 8px;
+}
+.agm-document-field [data-document-title] {
+    font-weight: 600;
+}

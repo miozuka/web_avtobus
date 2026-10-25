@@ -1,0 +1,443 @@
+/* Touch layouts: spacious controls, compact surfaces, balanced intermediate grids. */
+main .news-section .section-heading {
+    gap: 12px 24px;
+    margin-bottom: 22px;
+}
+main .news-section .section-title {
+    max-width: none;
+    margin: 0;
+    white-space: nowrap;
+    font-size: clamp(22px, 2.1vw, 36px);
+}
+main .news-section .section-heading > .text-link {
+    position: static;
+    margin: 0 0 0 auto;
+}
+main .news-strip {
+    position: relative;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: calc((100% - 32px) / 3);
+    gap: 16px;
+    overflow-x: auto;
+    scroll-snap-type: x proximity;
+    overscroll-behavior-x: contain;
+    padding: 6px 0;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+main .news-strip::-webkit-scrollbar {
+    display: none;
+    width: 0;
+    height: 0;
+}
+main .news-strip > .news-card {
+    min-width: 0;
+    scroll-snap-align: start;
+}
+main .news-strip:focus-visible {
+    outline: 3px solid var(--color-secondary);
+    outline-offset: 4px;
+}
+@media (max-width: 1023px) {
+    main .news-strip {
+        grid-auto-columns: calc((100% - 16px) / 2);
+    }
+}
+@media (max-width: 599px) {
+    main .news-strip {
+        grid-auto-columns: 92%;
+        gap: 12px;
+    }
+    main .news-section .section-heading {
+        gap: 10px;
+    }
+}
+html:is([data-text-size='large'], [data-text-size='extra']) main .news-section .section-title {
+    white-space: normal;
+    font-size: 1.5em;
+}
+@media print {
+    main .news-strip {
+        grid-auto-flow: row;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-auto-columns: auto;
+        overflow: visible;
+    }
+}
+@media (min-width: 600px) and (max-width: 1023px) {
+    main
+        :is(
+            .grid-three:not(.tariff-grid),
+            .news-page-grid,
+            .passenger-grid,
+            .vacancy-benefit-grid
+        ) {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    main .tariff-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+    main .tariff-card {
+        padding: 16px;
+    }
+    main .tariff-card h3 {
+        font-size: 1.05em;
+    }
+    main .tariff-bottom {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+    main .tariff-bottom strong {
+        font-size: 28px;
+    }
+    main .faq-layout,
+    main .contact-columns,
+    main .about-contact-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+    main .contact-side {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        align-items: start;
+    }
+    main .about-hero-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+    main .about-gallery {
+        border-radius: 16px;
+    }
+    main .about-slide {
+        min-height: 340px;
+    }
+    main .vacancy-layout {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1.65fr);
+        gap: 16px;
+    }
+    main .vacancy-job-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 16px;
+    }
+    main .vacancy-poster-card {
+        padding: 16px;
+    }
+}
+@media (max-width: 767px) {
+    :root {
+        --container-gutter: 16px;
+    }
+    main {
+        --section-space: 28px;
+    }
+    .site-header .header-inner {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 44px 44px;
+        gap: 10px;
+        min-height: 76px;
+        padding-block: 12px;
+    }
+    .site-header .header-inner .brand {
+        grid-column: 1;
+        max-width: none;
+        min-width: 0;
+        gap: 8px;
+        margin: 0;
+    }
+    .site-header .brand-name {
+        font-size: 15px;
+        line-height: 1.25;
+        max-width: none;
+        min-width: 0;
+    }
+    .site-header .custom-logo {
+        width: 36px;
+        height: 36px;
+    }
+    .site-header .access-toggle {
+        grid-column: 2;
+        grid-row: 1;
+        width: 44px;
+        min-height: 44px;
+        padding: 8px;
+    }
+    .site-header .menu-toggle {
+        grid-column: 3;
+        grid-row: 1;
+        width: 44px;
+        height: 44px;
+        padding: 10px;
+    }
+    .site-header .primary-navigation {
+        grid-column: 1/-1;
+    }
+    body.js .primary-navigation.is-open {
+        padding: 18px;
+    }
+    body.js .nav-list a {
+        font-size: 18px;
+        padding: 14px 12px;
+        min-height: 48px;
+    }
+    main
+        :is(
+            .grid,
+            .tariff-grid,
+            .enterprise-grid,
+            .contact-priority-grid,
+            .passenger-grid,
+            .vacancy-benefit-grid
+        ) {
+        gap: 12px;
+    }
+    main
+        :is(
+            .route-hero,
+            .schedule-content,
+            .quote-content,
+            .fleet-summary,
+            .feedback-card,
+            .news-subscribe,
+            .about-leadership-card
+        ) {
+        padding: 18px;
+        gap: 18px;
+    }
+    main
+        :is(
+            .card-body,
+            .service-card,
+            .info-card,
+            .about-card,
+            .tariff-card,
+            .enterprise-card,
+            .document-card,
+            .vacancy-job,
+            .vacancy-poster-card,
+            .vacancy-map-card,
+            .vacancy-benefit,
+            .contact-priority,
+            .contact-panel,
+            .contact-lost,
+            .passenger-card,
+            .passenger-panel,
+            .about-contact-card,
+            .about-document,
+            .about-stat,
+            .news-featured-body
+        ) {
+        padding: 16px;
+        border-radius: 12px;
+    }
+    main
+        :is(
+            .services-hero,
+            .news-page-hero,
+            .vacancy-hero,
+            .contact-hero,
+            .passenger-hero,
+            .about-intro,
+            .route-hero
+        )
+        h1 {
+        font-size: clamp(28px, 4.6vw, 34px);
+        line-height: 1.2;
+    }
+    main :is(.news-page-hero, .vacancy-hero, .contact-hero) {
+        padding-block: 28px;
+    }
+    main .services-hero-content {
+        padding-block: 28px;
+    }
+    main :is(.schedule-page, .timetable-page, .passenger-page) {
+        padding-block: 24px 32px;
+    }
+    main .hero {
+        min-height: 360px;
+    }
+    main .hero-content {
+        padding-block: 32px;
+    }
+    main .hero h1 {
+        font-size: clamp(32px, 5.8vw, 40px);
+    }
+    main .hero-lead {
+        font-size: 18px;
+    }
+    main .hero-note {
+        font-size: 13px;
+    }
+    main .icon-box {
+        margin-bottom: 12px;
+    }
+    main :is(.service-card, .info-card, .enterprise-card) p {
+        margin-bottom: 12px;
+    }
+    main .enterprise-description {
+        margin-bottom: 14px;
+    }
+    main .tariff-card > p {
+        margin-bottom: 16px;
+    }
+    main .tariff-top {
+        margin-bottom: 14px;
+    }
+    main .tariff-bottom {
+        padding-top: 14px;
+    }
+    main .passenger-tariffs h2 {
+        margin-block: 18px 22px;
+    }
+    main .faq-item summary {
+        padding: 14px 16px;
+        gap: 14px;
+    }
+    main .faq-answer {
+        padding: 14px 16px 18px;
+    }
+    main .contact-map-heading {
+        padding: 18px;
+        gap: 16px;
+    }
+    main :is(.contact-map-card iframe, .vacancy-map) {
+        height: 280px;
+    }
+    main .timetable-header,
+    main .timetable-graph {
+        padding: 16px;
+        border-radius: 12px;
+    }
+    main .timetable-number {
+        min-width: 48px;
+        height: 48px;
+        border-radius: 10px;
+    }
+    main .timetable-print {
+        margin-left: 0;
+    }
+    main .timetable-direction,
+    main .timetable-day {
+        min-height: 44px;
+    }
+    main .timetable-times {
+        gap: 6px;
+    }
+    main .timetable-times li {
+        min-height: 34px;
+        padding: 6px 9px;
+        border-radius: 8px;
+        font-size: 0.9em;
+    }
+    main .timetable-day-row {
+        margin-block: 18px;
+        padding-bottom: 18px;
+        gap: 12px;
+    }
+    main .timetable-note {
+        gap: 12px;
+        margin-top: 24px;
+        padding-top: 20px;
+    }
+    main.schedule-page .route-card {
+        min-height: 68px;
+        padding: 10px;
+        gap: 10px;
+    }
+    main.schedule-page .route-number {
+        min-width: 40px;
+        height: 40px;
+    }
+    main.schedule-page .route-labels {
+        font-size: 0.75em;
+    }
+    main .news-article {
+        padding: 18px;
+        border-radius: 12px;
+    }
+    main .news-article h1 {
+        font-size: 28px;
+    }
+    main .news-article-image {
+        margin-bottom: 18px;
+    }
+    main .about-section-heading {
+        margin-bottom: 22px;
+    }
+    main .about-event {
+        padding-left: 32px;
+    }
+    main .about-event:nth-child(even) {
+        padding-left: 32px;
+    }
+    main .about-event article {
+        padding: 16px;
+    }
+    .site-footer {
+        padding-top: 24px;
+    }
+    .site-footer .footer-grid {
+        gap: 20px 16px;
+    }
+    .footer-actions {
+        gap: 10px 14px;
+    }
+}
+@media (max-width: 599px) {
+    main .vacancy-layout,
+    main .contact-side {
+        grid-template-columns: minmax(0, 1fr);
+    }
+    main .vacancy-poster-card img {
+        max-width: 260px;
+        margin-inline: auto;
+        display: block;
+    }
+    main .vacancy-jobs-scroll {
+        max-height: 560px;
+        overscroll-behavior-y: contain;
+    }
+    main .route-hero-actions {
+        flex-direction: row;
+    }
+    main .route-hero-actions .button {
+        flex: 1 1 140px;
+        width: auto;
+    }
+    main .passenger-actions .passenger-button {
+        flex: 1 1 auto;
+    }
+    main .about-hero-actions .about-button {
+        flex: 1 1 auto;
+    }
+    main .about-slide {
+        min-height: 320px;
+    }
+    main .about-archive .about-slide {
+        min-height: 340px;
+    }
+    main .about-slide figcaption {
+        margin-inline: 18px;
+    }
+    main .about-slide h2 {
+        font-size: 22px;
+    }
+    main .news-subscribe-links .news-social {
+        min-height: 44px;
+        padding: 10px 14px;
+    }
+}
+@media (hover: none) and (pointer: coarse) {
+    .site-header .access-toggle:hover {
+        transform: none;
+    }
+    main .contact-rows a,
+    main .passenger-point a {
+        min-height: 44px;
+        display: inline-flex;
+        align-items: center;
+    }
+}
+@media print {
+    main .vacancy-jobs-scroll {
+        max-height: none;
+        overflow: visible;
+    }
+}

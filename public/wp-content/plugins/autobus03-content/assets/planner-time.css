@@ -1,0 +1,41 @@
+.agm-planner-clocks {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 12px;
+    margin: 16px 0 8px;
+    max-width: 360px;
+}
+.agm-planner-clocks > div {
+    padding: 12px 16px;
+    background: #fff;
+    border: 1px solid #c3d7e7;
+    border-radius: 6px;
+}
+.agm-planner-clocks span,
+.agm-planner-clocks strong,
+.agm-planner-main-time {
+    display: block;
+}
+.agm-planner-clocks span {
+    color: #50575e;
+    font-size: 12px;
+}
+.agm-planner-clocks strong {
+    margin-top: 6px;
+    font-size: 17px;
+    font-variant-numeric: tabular-nums;
+}
+.agm-planner-time-preview {
+    padding: 12px 14px;
+    border-left: 3px solid #2271b1;
+    background: #f0f6fc;
+    font-variant-numeric: tabular-nums;
+}
+@media (max-width: 600px) {
+    .agm-planner-clocks {
+        grid-template-columns: 1fr;
+    }
+    .agm-plans-table .agm-plan-when {
+        white-space: normal;
+    }
+}

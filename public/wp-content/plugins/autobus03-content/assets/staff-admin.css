@@ -1,0 +1,88 @@
+.agm-staff {
+  max-width: 1200px;
+}
+.agm-staff p,
+.agm-staff td {
+  line-height: 1.6;
+}
+.agm-staff-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 16px 0 22px;
+}
+.agm-staff-box {
+  background: #fff;
+  border: 1px solid #dcdcde;
+  border-radius: 6px;
+  padding: 24px;
+  margin: 20px 0;
+}
+.agm-staff-box h2 {
+  margin-top: 0;
+}
+.agm-staff-permissions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin: 24px 0;
+}
+.agm-staff-permission {
+  padding: 16px;
+  border: 1px solid #dcdcde;
+  border-radius: 5px;
+}
+.agm-staff-permission select {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  margin-top: 10px;
+}
+.agm-staff-permission p {
+  margin-bottom: 0;
+}
+.agm-staff-table td {
+  vertical-align: top;
+}
+.agm-staff-table td:last-child {
+  min-width: 180px;
+  white-space: nowrap;
+}
+.agm-staff-table .button {
+  margin: 2px 2px 4px 0;
+}
+@media (max-width: 782px) {
+  .agm-staff-box {
+    padding: 16px;
+  }
+  .agm-staff-permissions {
+    grid-template-columns: 1fr;
+  }
+  .agm-staff-box .regular-text {
+    width: 100%;
+  }
+  .agm-staff-table,
+  .agm-staff-table tbody,
+  .agm-staff-table tr,
+  .agm-staff-table td {
+    display: block;
+    width: auto;
+  }
+  .agm-staff-table thead {
+    display: none;
+  }
+  .agm-staff-table tr {
+    padding: 12px;
+    border-bottom: 1px solid #dcdcde;
+  }
+  .agm-staff-table td {
+    padding: 5px 0;
+  }
+  .agm-staff-table td:nth-child(2)::before {
+    content: "Сотрудников: ";
+    color: #50575e;
+  }
+  .agm-staff-table td:last-child {
+    white-space: normal;
+  }
+}

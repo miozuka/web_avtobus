@@ -1,0 +1,35 @@
+{
+    "exported_utc": "2026-10-16T06:47:50+00:00",
+    "prepared_date": "2026-10-16",
+    "wordpress": "7.1.3",
+    "home": "http://127.0.0.1:8083",
+    "table_prefix": "wp_",
+    "theme": "autobus03",
+    "tables": 12,
+    "rows": {
+        "wp_commentmeta": 0,
+        "wp_comments": 0,
+        "wp_links": 0,
+        "wp_options": 145,
+        "wp_postmeta": 5314,
+        "wp_posts": 1153,
+        "wp_term_relationships": 192,
+        "wp_term_taxonomy": 15,
+        "wp_termmeta": 0,
+        "wp_terms": 15,
+        "wp_usermeta": 25,
+        "wp_users": 1
+    },
+    "source_database": "w_avtobus03_preview",
+    "source_host": "localhost",
+    "source_port": 10005,
+    "admin_id": 1,
+    "credentials_reset": true,
+    "excluded_rows": {
+        "wp_options": 21,
+        "wp_postmeta": 13,
+        "wp_posts": 5,
+        "wp_usermeta": 1
+    },
+    "uploads": 2168
+}

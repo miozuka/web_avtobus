@@ -1,0 +1,168 @@
+.agm-direction {
+  padding: 18px;
+  margin: 20px 0;
+  border: 1px solid #dcdcde;
+  border-radius: 8px;
+  background: #fafafa;
+}
+.agm-direction legend {
+  padding: 0 8px;
+  font-weight: 600;
+}
+.agm-direction-top {
+  display: flex;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+.agm-direction-top label {
+  flex: 1;
+  min-width: 180px;
+}
+.agm-direction label {
+  display: block;
+  font-weight: 600;
+}
+.agm-direction :is(input, textarea) {
+  margin-top: 6px;
+  font-weight: 400;
+}
+.agm-direction textarea {
+  resize: vertical;
+}
+.agm-direction-days {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 16px;
+}
+.agm-direction summary {
+  cursor: pointer;
+  margin-bottom: 14px;
+}
+.agm-direction-order {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+}
+.agm-planner .agm-plan-form {
+  max-width: 960px;
+  padding: 20px;
+  margin-bottom: 24px;
+  background: #fff;
+  border: 1px solid #dcdcde;
+}
+.agm-planner :is(input, textarea, select) {
+  max-width: 100%;
+}
+.agm-planner .widefat {
+  margin-top: 6px;
+}
+.agm-planner > form select {
+  width: min(100%, 680px);
+}
+.agm-planner .widefat td {
+  overflow-wrap: anywhere;
+}
+.agm-plan-dates {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 16px;
+  max-width: 520px;
+  margin-block: 12px 20px;
+}
+.agm-plan-dates label {
+  display: block;
+  margin-bottom: 6px;
+}
+.agm-plan-dates input {
+  width: 100%;
+  min-height: 40px;
+}
+.agm-plan-extra {
+  margin-block: 16px;
+}
+.agm-plan-extra summary {
+  cursor: pointer;
+  font-weight: 600;
+}
+.agm-plan-form .button {
+  margin-block: 4px;
+}
+.agm-plans-table .agm-plan-when {
+  white-space: nowrap;
+}
+@media (max-width: 600px) {
+  .agm-direction-days,
+  .agm-plan-dates {
+    grid-template-columns: 1fr;
+  }
+  .agm-plans-table {
+    border: 0;
+    background: transparent;
+  }
+  .agm-plans-table thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    overflow: hidden;
+    clip-path: inset(50%);
+  }
+  .agm-plans-table tbody {
+    display: grid;
+    gap: 12px;
+  }
+  .agm-plans-table tbody tr:nth-child(n) {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 12px;
+    padding: 16px;
+    border: 1px solid #dcdcde;
+    border-radius: 8px;
+    background: #fff;
+  }
+  .agm-plans-table td {
+    display: block;
+    padding: 0;
+  }
+  .agm-plans-table .agm-plan-when {
+    white-space: normal;
+  }
+  .agm-plans-table td:first-child,
+  .agm-plans-table td:last-child {
+    grid-column: 1 / -1;
+  }
+  .agm-plans-table td:first-child {
+    font-weight: 600;
+  }
+  .agm-plans-table td::before {
+    content: attr(data-label);
+    display: block;
+    margin-bottom: 4px;
+    font-size: 12px;
+    font-weight: 400;
+    color: #646970;
+  }
+  .agm-plans-table .agm-plan-actions a {
+    display: inline-flex;
+    padding: 6px 10px;
+    margin: 0 4px 4px 0;
+    border: 1px solid #2271b1;
+    border-radius: 4px;
+    text-decoration: none;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+  .agm-plans-table .agm-plan-actions br {
+    display: none;
+  }
+}
+
+.agm-direction .agm-time-status {
+  display: block;
+  margin-top: 6px;
+  font-weight: 400;
+  line-height: 1.5;
+}

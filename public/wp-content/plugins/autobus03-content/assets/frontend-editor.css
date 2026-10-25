@@ -1,0 +1,57 @@
+/* Только интерфейс сотрудника. Шрифты, размеры и кнопки открытого сайта не переопределяются. */
+#agm-edit-toggle,#agm-edit-tasks-toggle,#agm-edit-tools,#agm-edit-dialog,#agm-edit-overlays{font:14px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#172338;text-align:left;letter-spacing:normal}
+#agm-edit-tasks-toggle{position:fixed;right:18px;bottom:18px;z-index:99990;border:1px solid #97abc5;background:#fff;border-radius:12px;padding:12px 16px;cursor:pointer}
+#agm-edit-tasks-toggle[hidden]{display:none!important}
+#agm-edit-toggle,#agm-edit-tools button,#agm-edit-dialog button,#agm-edit-overlays button{font:inherit;cursor:pointer;letter-spacing:normal;text-transform:none}
+#agm-edit-toggle{position:fixed;left:18px;bottom:18px;z-index:99990;border:1px solid #064b9b;border-radius:12px;background:#1259b3;color:#fff;box-shadow:0 6px 24px #102b4830;padding:12px 18px;max-width:calc(100vw - 36px)}
+#agm-edit-toggle[aria-pressed=true]{background:#123a31;border-color:#123a31}
+#agm-edit-tools{position:fixed;right:18px;top:52px;bottom:82px;width:320px;max-width:calc(100vw - 36px);overflow:auto;z-index:99989;background:#fff;border:1px solid #cdd8e5;border-radius:16px;box-shadow:0 12px 40px #0e294530;padding:18px;box-sizing:border-box;overscroll-behavior:contain}
+#agm-edit-tools[hidden],#agm-edit-overlays button[hidden],#agm-edit-tools [hidden]{display:none!important}
+#agm-edit-tools header,#agm-edit-dialog>header{display:flex;align-items:center;justify-content:space-between;gap:16px}
+#agm-edit-tools header strong{font-size:17px}
+#agm-edit-tools header button,#agm-edit-dialog [data-agm-close]{flex:none;width:36px;height:36px;background:#edf2f7;color:#253955;border:1px solid #d5dfea;border-radius:9px;font-size:24px;line-height:1}
+#agm-edit-tools p{margin:12px 0;color:#516178;font-size:13px}
+#agm-edit-tools label{font-weight:600;display:block;margin:14px 0 5px}
+#agm-edit-search{box-sizing:border-box;min-width:0;width:100%;height:42px;background:#fff;border:1px solid #aab9cc;border-radius:8px;padding:8px 10px;font:inherit;color:#172338}
+#agm-edit-tools h3{font-family:inherit;font-weight:600;font-size:12px;line-height:1.4;letter-spacing:normal;color:#566a83;margin:18px 0 5px}
+#agm-edit-task-list button{display:block;width:100%;text-align:left;background:#f5f8fc;color:#163b68;border:1px solid #e1e8f0;border-radius:8px;padding:10px 12px;margin:5px 0;white-space:normal}
+#agm-edit-task-list button:hover{background:#e8f0fc;border-color:#8aa9cd}
+#agm-edit-overlays{position:fixed;inset:0;pointer-events:none;z-index:99988}
+#agm-edit-overlays button{position:absolute;pointer-events:auto;background:#fff;color:#10468a;box-shadow:0 2px 8px #142c4830;border:1px solid #83a9da;border-radius:7px;padding:6px 10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:12px;font-weight:650;line-height:20px;max-height:34px}
+#agm-edit-overlays .agm-record-edit{background:#114c8e;border-color:#114c8e;color:#fff}
+body.agm-editing .agm-edit-target:hover{outline:2px dashed #3b78b7;outline-offset:-3px}
+body.agm-editing .cookie-notice{display:none!important}
+#agm-edit-dialog{box-sizing:border-box;position:fixed;inset:0;width:min(1220px,96vw);height:94dvh;max-height:94dvh;max-width:96vw;margin:auto;padding:0;border:1px solid #bccbdd;border-radius:16px;box-shadow:0 24px 100px #071e4a44;overflow:hidden;background:white}
+#agm-edit-dialog[open]{display:flex;flex-direction:column}
+#agm-edit-dialog::backdrop{background:#0d233bb3}
+#agm-edit-dialog>header{padding:12px 18px;background:#fff;border-bottom:1px solid #dce4ee;flex:none}
+#agm-edit-dialog-title{display:block;font-size:17px;line-height:1.35}
+#agm-edit-status{display:block;font-size:12px;color:#50637a;margin-top:4px}
+#agm-edit-dialog .agm-edit-dialog-actions{display:flex;align-items:center;justify-content:space-between;gap:12px;flex:none;padding:8px 18px;background:#f3f7fc;border-bottom:1px solid #dce4ee}
+#agm-edit-full{color:#124f9f;text-decoration:underline;font-size:12px}
+#agm-edit-dialog [data-agm-refresh]{border:1px solid #9bb4d2;background:#fff;border-radius:7px;padding:6px 12px;font-size:12px;color:#173c6b}
+#agm-edit-frame{border:0;width:100%;flex:1;min-height:0;background:#f0f0f1}
+html.agm-dialog-open{overflow:hidden}
+#agm-edit-tools button:focus-visible,#agm-edit-toggle:focus-visible,#agm-edit-overlays button:focus-visible,#agm-edit-dialog button:focus-visible{outline:3px solid #2684ff;outline-offset:3px}
+/* Обычные формы WordPress внутри окна получают всю ширину; их поля и сохранение остаются штатными. */
+body.agm-embedded-editor #adminmenumain,body.agm-embedded-editor #wpadminbar,body.agm-embedded-editor #wpfooter,body.agm-embedded-editor #screen-meta-links,body.agm-embedded-editor .update-nag{display:none!important}
+body.agm-embedded-editor #wpcontent,body.agm-embedded-editor #wpfooter{margin-left:0!important}
+body.agm-embedded-editor #wpbody-content{padding-bottom:24px}
+html:has(body.agm-embedded-editor){padding-top:0!important}
+body.agm-embedded-editor #wpwrap{top:0}
+body.agm-embedded-editor .agm-settings-nav{display:none}
+body.agm-embedded-editor .agm-setting-search{display:none}
+body.agm-embedded-editor .agm-settings-layout{display:block}
+body.agm-embedded-editor .interface-interface-skeleton{left:0!important;top:0!important}
+body.agm-embedded-editor .edit-post-layout .interface-interface-skeleton{left:0!important}
+@media(max-width:780px){#agm-edit-tools{top:auto;bottom:76px;right:12px;width:min(360px,calc(100vw - 24px));max-height:43dvh;border-radius:12px;padding:14px}#agm-edit-toggle{left:12px;bottom:12px;padding:10px 14px;font-size:13px}#agm-edit-overlays button{font-size:11px;padding:3px 7px;max-width:180px!important}#agm-edit-dialog{width:100vw;max-width:100vw;height:100dvh;max-height:100dvh;border-radius:0;border:0}#agm-edit-dialog>header{padding:10px 12px}#agm-edit-dialog-title{font-size:15px}#agm-edit-dialog .agm-edit-dialog-actions{padding:8px 12px;flex-wrap:wrap}body.agm-embedded-editor #wpcontent{padding-left:10px!important}body.agm-embedded-editor .auto-fold #wpcontent{margin-left:0!important}}
+
+#agm-edit-dialog [data-agm-save]{border:1px solid #1259b3;border-radius:8px;background:#1259b3;color:white;padding:8px 14px;font-weight:600}
+#agm-edit-dialog [data-agm-save]:disabled{opacity:.55;cursor:wait}
+#agm-edit-dialog [data-agm-save][hidden]{display:none!important}
+#agm-edit-tools .agm-task-scopes{display:flex;gap:6px;margin:12px 0}
+#agm-edit-tools .agm-task-scopes button{flex:1;padding:8px;border:1px solid #bccde1;border-radius:8px;background:#fff;color:#234d7e;font-size:12px}
+#agm-edit-tools .agm-task-scopes [aria-pressed=true]{background:#eaf2ff;border-color:#3579bf;font-weight:650}
+#agm-edit-tools #agm-edit-result-count{font-size:12px;margin:6px 0}
+#agm-edit-tools .agm-element-help summary{cursor:pointer;font-size:12px;color:#25476d}
+@media(max-width:780px){#agm-edit-dialog [data-agm-refresh]{display:none}.agm-edit-dialog-actions #agm-edit-full{margin-left:auto}#agm-edit-tools{bottom:116px;max-height:62dvh}#agm-edit-tools>.agm-element-help{padding:8px;margin:8px 0}#agm-edit-tools>p:first-of-type{margin:8px 0;font-size:12px}}

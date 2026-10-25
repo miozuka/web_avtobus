@@ -1,0 +1,128 @@
+.agm-job-fields {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+  padding: 8px 0;
+}
+.agm-job-wide {
+  grid-column: 1/-1;
+}
+.agm-job-field label {
+  display: block;
+  margin-bottom: 8px;
+}
+.agm-job-field input,
+.agm-job-field textarea {
+  width: 100%;
+  max-width: 100%;
+}
+.agm-job-field textarea {
+  resize: vertical;
+}
+.agm-job-field .description {
+  line-height: 1.6;
+  margin-top: 7px;
+}
+.agm-job-required {
+  font-weight: 400;
+  color: #50575e;
+}
+.agm-job-more {
+  padding: 16px;
+  border: 1px solid #dcdcde;
+  border-radius: 5px;
+}
+.agm-job-more summary {
+  cursor: pointer;
+  font-weight: 600;
+  padding-block: 4px;
+}
+.agm-job-more .agm-job-field {
+  margin-top: 18px;
+}
+.agm-job-preview {
+  max-width: 720px;
+  padding: 24px;
+  border: 1px solid #dce4ed;
+  border-radius: 16px;
+  background: #fff;
+  color: #1b2840;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+.agm-job-preview [hidden] {
+  display: none !important;
+}
+.agm-job-preview-top {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 12px;
+  color: #5e718c;
+  font-size: 12px;
+}
+.agm-job-preview-top span:first-child {
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.agm-job-preview h3 {
+  margin: 14px 0 10px;
+  font-size: 23px;
+  line-height: 1.3;
+}
+.agm-job-preview > p {
+  color: #5e718c;
+}
+.agm-job-preview ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
+  padding: 0;
+  margin: 18px 0;
+}
+.agm-job-preview li {
+  background: #f0f4f9;
+  border-radius: 8px;
+  padding: 6px 10px;
+  margin: 0;
+  color: #5e718c;
+}
+.agm-job-preview-payment {
+  margin-top: 20px;
+}
+.agm-job-preview-payment > span {
+  display: block;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #5e718c;
+}
+.agm-job-preview-payment strong {
+  display: block;
+  color: #07804d;
+  font-size: 24px;
+  margin-top: 8px;
+}
+.agm-job-preview-payment p {
+  color: #5e718c;
+}
+.agm-job-preview-button {
+  display: inline-flex;
+  padding: 10px 16px;
+  border: 1px solid #dce4ed;
+  border-radius: 10px;
+  margin-top: 8px;
+  font-weight: 600;
+}
+@media (max-width: 782px) {
+  .agm-job-fields {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+  .agm-job-preview {
+    padding: 18px;
+  }
+  .agm-job-preview h3 {
+    font-size: 21px;
+  }
+}

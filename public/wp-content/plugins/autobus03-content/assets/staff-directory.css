@@ -1,0 +1,207 @@
+.agm-staff-summary {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(120px, 1fr)) minmax(220px, 1.3fr);
+  gap: 12px;
+  margin: 20px 0;
+  max-width: 1280px;
+}
+.agm-staff-summary > div {
+  background: #fff;
+  border: 1px solid #dcdcde;
+  border-radius: 8px;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+}
+.agm-staff-summary strong {
+  font-size: 26px;
+  line-height: 1.2;
+  color: #1d2327;
+}
+.agm-staff-summary span {
+  color: #50575e;
+}
+.agm-staff-summary .button {
+  text-align: center;
+}
+.agm-staff-status {
+  display: inline-block;
+  border-radius: 20px;
+  padding: 3px 10px;
+  font-size: 12px;
+  font-weight: 600;
+  white-space: normal;
+}
+.agm-staff-status.is-active {
+  background: #e9f5ec;
+  color: #176c36;
+}
+.agm-staff-status.is-paused {
+  background: #fff0d6;
+  color: #805309;
+}
+.agm-staff-directory-page .column-agm_access {
+  width: 130px;
+}
+.agm-staff-directory-page .column-agm_last_login {
+  width: 150px;
+}
+.agm-staff-directory-page .row-actions {
+  line-height: 1.8;
+}
+.agm-staff-directory-page .column-email {
+  overflow-wrap: anywhere;
+}
+.agm-staff-form-help,
+.agm-staff-role-hint,
+.agm-staff-live-summary {
+  padding: 16px 18px;
+  border: 1px solid #c5d9e8;
+  border-radius: 6px;
+  background: #f4f8fc;
+  line-height: 1.6;
+}
+.agm-staff-form-help {
+  max-width: 920px;
+  margin: 20px 0;
+}
+.agm-staff-form-help p {
+  margin: 6px 0 12px;
+}
+.agm-staff-role-hint {
+  max-width: 600px;
+  margin-top: 10px !important;
+}
+.agm-staff-compact [data-agm-optional] {
+  display: none;
+}
+.agm-staff-preset {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  border-bottom: 1px solid #dcdcde;
+  padding-block: 20px;
+}
+.agm-staff-preset p {
+  flex-basis: 100%;
+  margin: 0;
+}
+.agm-staff-preset label {
+  font-weight: 600;
+}
+.agm-staff-live-summary {
+  margin-bottom: 20px;
+}
+#agm-staff-status {
+  max-width: 220px;
+  margin-right: 6px;
+}
+@media (max-width: 1100px) {
+  .agm-staff-summary {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .agm-staff-summary > div:last-child {
+    grid-column: 1/-1;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .agm-staff-directory-page .column-agm_access,
+  .agm-staff-directory-page .column-agm_last_login {
+    width: auto;
+  }
+}
+@media (max-width: 782px) {
+  .agm-staff-summary {
+    gap: 8px;
+  }
+  .agm-staff-summary > div {
+    padding: 12px;
+  }
+  .agm-staff-summary strong {
+    font-size: 23px;
+  }
+  .agm-staff-summary span {
+    font-size: 12px;
+  }
+  .agm-staff-form-help {
+    padding: 14px;
+  }
+  .agm-staff-role-hint {
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+  .agm-staff-preset {
+    align-items: stretch;
+    flex-direction: column;
+  }
+  .agm-staff-preset select {
+    width: 100%;
+    max-width: 100%;
+  }
+  .agm-staff-directory-page .tablenav.top {
+    height: auto;
+    min-height: 40px;
+  }
+  .agm-staff-directory-page .tablenav .actions {
+    float: none;
+    max-width: 100%;
+  }
+  .agm-staff-directory-page .tablenav select {
+    max-width: 100%;
+  }
+}
+
+.agm-staff-directory-page .subsubsub {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  max-width: 100%;
+}
+.agm-staff-directory-page .subsubsub li,
+.agm-staff-directory-page .subsubsub a {
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+.agm-staff-directory-page .column-username {
+  overflow-wrap: anywhere;
+}
+.agm-staff-directory-page .column-username img.avatar {
+  display: none;
+}
+.agm-staff-directory-page .tablenav.bottom .actions {
+  display: none;
+}
+.agm-staff-filter {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-left: 16px;
+  vertical-align: top;
+}
+@media (max-width: 782px) {
+  .agm-staff-directory-page .tablenav.top .actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    padding-bottom: 8px;
+  }
+  .agm-staff-filter {
+    display: flex;
+    flex: 1 0 100%;
+    margin: 8px 0 0;
+  }
+  .agm-staff-filter #agm-staff-status {
+    flex: 1;
+    min-width: 0;
+    margin: 0;
+  }
+}
+
+.agm-staff-summary {
+  clear: both;
+  width: 100%;
+  box-sizing: border-box;
+}

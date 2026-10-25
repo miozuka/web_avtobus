@@ -1,0 +1,730 @@
+/* Motion studio: page-specific geometry and staggered inner layers. */
+main[data-scene] {
+    --motion-name: motion-document;
+    --motion-duration: 0.92s;
+    --motion-x: 20px;
+    --depth-factor: 1;
+    overflow-x: clip;
+}
+main[data-scene] h1 {
+    letter-spacing: -0.04em;
+}
+main[data-scene] :is(.pill, .eyebrow) {
+    letter-spacing: 0.045em;
+}
+main[data-scene='home'] {
+    --motion-name: motion-home;
+    --motion-duration: 1s;
+}
+main[data-scene='services'] {
+    --motion-name: motion-services;
+}
+main[data-scene='schedule'] {
+    --motion-name: motion-schedule;
+    --motion-duration: 0.65s;
+}
+main[data-scene='timetable'] {
+    --motion-name: motion-timetable;
+    --motion-duration: 0.55s;
+}
+main[data-scene='news'] {
+    --motion-name: motion-news;
+    --motion-duration: 1s;
+}
+main[data-scene='article'] {
+    --motion-name: motion-article;
+}
+main[data-scene='about'] {
+    --motion-name: motion-about;
+    --motion-duration: 1s;
+}
+main[data-scene='vacancy'] {
+    --motion-name: motion-vacancy;
+    --motion-duration: 1.05s;
+}
+main[data-scene='contact'] {
+    --motion-name: motion-contact;
+}
+main[data-scene='ticket'] {
+    --motion-name: motion-ticket;
+}
+main[data-scene='benefits'] {
+    --motion-name: motion-benefits;
+}
+main[data-scene='privacy'] {
+    --motion-name: motion-privacy;
+    --motion-duration: 0.45s;
+}
+main[data-scene='terms'] {
+    --motion-name: motion-terms;
+    --motion-duration: 0.45s;
+}
+.scroll-reveal {
+    opacity: 0;
+}
+.interface-enter,
+.scroll-reveal.is-revealed {
+    animation: var(--motion-name, motion-document) var(--motion-duration)
+        cubic-bezier(0.16, 1, 0.3, 1) var(--motion-delay, 0ms) both;
+    transform-origin: 50% 75%;
+}
+/* Each heading keeps its original font, size, line breaks and text. */
+.motion-word {
+    display: inline-block;
+    max-width: 100%;
+    vertical-align: baseline;
+    overflow-wrap: anywhere;
+}
+.motion-word.interface-enter {
+    animation-name: word-stage;
+    animation-duration: 0.9s;
+}
+.motion-glyph {
+    display: inline-block;
+    transform-origin: 50% 100%;
+    animation: glyph-hinge 0.85s cubic-bezier(0.16, 1, 0.3, 1)
+        calc(var(--motion-delay, 0ms) + var(--glyph-delay, 0ms)) both;
+}
+main[data-scene='news'] .motion-glyph,
+main[data-scene='article'] .motion-glyph {
+    animation-name: glyph-shutter;
+}
+main[data-scene='about'] .motion-glyph {
+    animation-name: glyph-orbit;
+}
+main[data-scene='schedule'] .motion-glyph,
+main[data-scene='services'] .motion-glyph {
+    animation-name: glyph-slot;
+}
+main[data-scene='contact'] .motion-glyph,
+main[data-scene='benefits'] .motion-glyph {
+    animation-name: glyph-focus;
+}
+@keyframes word-stage {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+@keyframes glyph-hinge {
+    0% {
+        opacity: 0;
+        transform: perspective(600px) rotateX(-85deg) translateY(65%);
+    }
+    65% {
+        opacity: 1;
+        transform: perspective(600px) rotateX(7deg) translateY(-3%);
+    }
+    100% {
+        opacity: 1;
+        transform: none;
+    }
+}
+@keyframes glyph-shutter {
+    from {
+        opacity: 0;
+        clip-path: inset(100% 0 0);
+        transform: translateY(50%) skewY(8deg);
+    }
+    to {
+        opacity: 1;
+        clip-path: inset(0);
+        transform: none;
+    }
+}
+@keyframes glyph-orbit {
+    from {
+        opacity: 0;
+        transform: perspective(650px) rotateY(85deg) translateX(25%);
+    }
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+@keyframes glyph-slot {
+    from {
+        opacity: 0;
+        transform: translateY(-70%);
+        clip-path: inset(0 0 100%);
+    }
+    to {
+        opacity: 1;
+        transform: none;
+        clip-path: inset(0);
+    }
+}
+@keyframes glyph-focus {
+    from {
+        opacity: 0;
+        transform: scale(0.65);
+        clip-path: inset(25%);
+    }
+    to {
+        opacity: 1;
+        transform: none;
+        clip-path: inset(0);
+    }
+}
+/* Real card contents have their own timing after the outer plane opens. */
+:is(.interface-enter, .is-revealed) .motion-layer {
+    animation: layer-rise 0.7s cubic-bezier(0.16, 1, 0.3, 1)
+        calc(var(--motion-delay, 0ms) + var(--layer-delay, 0ms) + 100ms) both;
+}
+:is(.interface-enter, .is-revealed) .motion-media {
+    animation: media-shutter 1s cubic-bezier(0.16, 1, 0.3, 1) var(--motion-delay, 0ms) both;
+}
+main[data-scene='about'] :is(.interface-enter, .is-revealed) .motion-media {
+    animation-name: media-aperture;
+}
+main[data-scene='schedule'] :is(.interface-enter, .is-revealed) .motion-layer {
+    animation-name: layer-lateral;
+}
+main[data-scene='vacancy'] :is(.interface-enter, .is-revealed) .motion-layer {
+    animation-name: layer-depth;
+}
+main[data-scene='contact'] :is(.interface-enter, .is-revealed) .motion-layer {
+    animation-name: layer-focus;
+}
+@keyframes layer-rise {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+        clip-path: inset(0 0 100%);
+    }
+    to {
+        opacity: 1;
+        transform: none;
+        clip-path: inset(0);
+    }
+}
+@keyframes layer-lateral {
+    from {
+        opacity: 0;
+        transform: translateX(16px);
+    }
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+@keyframes layer-depth {
+    from {
+        opacity: 0;
+        transform: perspective(900px) rotateX(-16deg) translateY(18px);
+    }
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+@keyframes layer-focus {
+    from {
+        opacity: 0;
+        transform: scale(0.96);
+    }
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+@keyframes media-shutter {
+    from {
+        opacity: 0;
+        clip-path: inset(0 100% 0 0);
+    }
+    to {
+        opacity: 1;
+        clip-path: inset(0);
+    }
+}
+@keyframes media-aperture {
+    from {
+        opacity: 0;
+        clip-path: inset(18% 35% round 25%);
+    }
+    to {
+        opacity: 1;
+        clip-path: inset(0);
+    }
+}
+/* Home lifts stacked planes; services unfold in three horizontal bands. */
+@keyframes motion-home {
+    from {
+        opacity: 0;
+        transform: perspective(1300px) rotateX(calc(12deg * var(--depth-factor))) translateY(40px)
+            scale(0.96);
+        clip-path: inset(12% 0 0);
+    }
+    to {
+        opacity: 1;
+        transform: none;
+        clip-path: inset(0);
+    }
+}
+@keyframes motion-services {
+    from {
+        opacity: 0;
+        transform: perspective(1200px) rotateX(calc(-12deg * var(--depth-factor)));
+        clip-path: polygon(
+            0 16%,
+            100% 16%,
+            100% 17%,
+            0 17%,
+            0 49%,
+            100% 49%,
+            100% 50%,
+            0 50%,
+            0 82%,
+            100% 82%,
+            100% 83%,
+            0 83%
+        );
+    }
+    to {
+        opacity: 1;
+        transform: none;
+        clip-path: polygon(
+            0 0,
+            100% 0,
+            100% 33.34%,
+            0 33.34%,
+            0 33.33%,
+            100% 33.33%,
+            100% 66.67%,
+            0 66.67%,
+            0 66.66%,
+            100% 66.66%,
+            100% 100%,
+            0 100%
+        );
+    }
+}
+/* Routes pull out along a rail; time rows unfold vertically. */
+@keyframes motion-schedule {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+        clip-path: inset(0 90% 0 0);
+    }
+    to {
+        opacity: 1;
+        transform: none;
+        clip-path: inset(0);
+    }
+}
+@keyframes motion-timetable {
+    from {
+        opacity: 0;
+        transform: perspective(800px) rotateX(calc(-35deg * var(--depth-factor)));
+        clip-path: inset(50% 0);
+    }
+    to {
+        opacity: 1;
+        transform: none;
+        clip-path: inset(0);
+    }
+}
+/* News uses an angled shutter. About opens its photo frame from the centre. */
+@keyframes motion-news {
+    from {
+        opacity: 0;
+        transform: translateY(28px);
+        clip-path: polygon(0 100%, 100% 65%, 100% 100%, 0 100%);
+    }
+    to {
+        opacity: 1;
+        transform: none;
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+}
+@keyframes motion-article {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+        clip-path: inset(0 100% 0 0);
+    }
+    to {
+        opacity: 1;
+        transform: none;
+        clip-path: inset(0);
+    }
+}
+@keyframes motion-about {
+    from {
+        opacity: 0;
+        transform: perspective(1300px)
+            rotateY(calc(var(--motion-side, 1) * 12deg * var(--depth-factor))) scale(0.96);
+        clip-path: inset(0 48%);
+    }
+    to {
+        opacity: 1;
+        transform: none;
+        clip-path: inset(0);
+    }
+}
+/* Vacancies roll up like physical panels; contacts open as a lens. */
+@keyframes motion-vacancy {
+    0% {
+        opacity: 0;
+        transform: perspective(1400px) rotateX(calc(-22deg * var(--depth-factor))) translateY(36px);
+        clip-path: inset(0 0 65%);
+    }
+    70% {
+        opacity: 1;
+        transform: perspective(1400px) rotateX(2deg);
+        clip-path: inset(0);
+    }
+    100% {
+        opacity: 1;
+        transform: none;
+        clip-path: inset(0);
+    }
+}
+@keyframes motion-contact {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+        clip-path: inset(40% 30% round 45%);
+    }
+    to {
+        opacity: 1;
+        transform: none;
+        clip-path: inset(0);
+    }
+}
+@keyframes motion-ticket {
+    from {
+        opacity: 0;
+        transform: perspective(1000px) rotateY(calc(-22deg * var(--depth-factor)));
+        clip-path: inset(0 45%);
+    }
+    to {
+        opacity: 1;
+        transform: none;
+        clip-path: inset(0);
+    }
+}
+@keyframes motion-benefits {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+        clip-path: inset(50% 0 round 30px);
+    }
+    to {
+        opacity: 1;
+        transform: none;
+        clip-path: inset(0);
+    }
+}
+@keyframes motion-privacy {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+@keyframes motion-terms {
+    from {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+@keyframes motion-document {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+/* Pointer and keyboard interactions use the same small directional cue. */
+@media (hover: hover) and (pointer: fine) {
+    main[data-scene]
+        :is(.button, .vacancy-button, .contact-button, .passenger-button, .text-link)
+        > .icon {
+        transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    main[data-scene]
+        :is(.button, .vacancy-button, .contact-button, .passenger-button, .text-link):is(
+            :hover,
+            :focus-visible
+        )
+        > .icon {
+        transform: translateX(3px) rotate(-6deg);
+    }
+}
+.back-to-top {
+    width: 46px;
+    height: 46px;
+    padding: 0;
+    place-items: center;
+    border-radius: 14px;
+}
+.back-to-top:not([hidden]) {
+    display: grid;
+    animation: back-to-top-in 0.3s cubic-bezier(0.16, 1, 0.3, 1) both;
+    background: var(--color-primary);
+    box-shadow: none;
+}
+@keyframes back-to-top-in {
+    from {
+        opacity: 0;
+        transform: translateY(10px) scale(0.88);
+    }
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+/* Native navigation preserves history and ordinary WordPress links. */
+@view-transition {
+    navigation: auto;
+}
+.site-header {
+    view-transition-name: site-header;
+}
+::view-transition-old(site-header),
+::view-transition-new(site-header) {
+    animation: none;
+}
+::view-transition-old(root) {
+    animation: page-depart 0.3s ease-in both;
+}
+::view-transition-new(root) {
+    animation: page-fold 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+html[data-page-scene='news']::view-transition-new(root),
+html[data-page-scene='article']::view-transition-new(root) {
+    animation-name: page-shutter;
+}
+html[data-page-scene='contact']::view-transition-new(root),
+html[data-page-scene='benefits']::view-transition-new(root) {
+    animation-name: page-aperture;
+}
+html[data-page-scene='schedule']::view-transition-new(root),
+html[data-page-scene='ticket']::view-transition-new(root) {
+    animation-name: page-rail;
+}
+html[data-page-scene='about']::view-transition-new(root) {
+    animation-name: page-frame;
+}
+@keyframes page-depart {
+    to {
+        opacity: 0;
+        transform: scale(0.98) translateY(-6px);
+    }
+}
+@keyframes page-fold {
+    from {
+        opacity: 0;
+        transform: perspective(1600px) rotateX(-7deg) scale(0.97);
+        clip-path: inset(0 0 65%);
+    }
+    to {
+        opacity: 1;
+        transform: none;
+        clip-path: inset(0);
+    }
+}
+@keyframes page-shutter {
+    from {
+        opacity: 0;
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 30%);
+    }
+    to {
+        opacity: 1;
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+}
+@keyframes page-aperture {
+    from {
+        opacity: 0;
+        clip-path: inset(30% 40% round 35%);
+    }
+    to {
+        opacity: 1;
+        clip-path: inset(0);
+    }
+}
+@keyframes page-rail {
+    from {
+        opacity: 0;
+        clip-path: inset(0 100% 0 0);
+    }
+    to {
+        opacity: 1;
+        clip-path: inset(0);
+    }
+}
+@keyframes page-frame {
+    from {
+        opacity: 0;
+        clip-path: inset(10% 20%);
+        transform: scale(0.96);
+    }
+    to {
+        opacity: 1;
+        clip-path: inset(0);
+        transform: none;
+    }
+}
+@media (max-width: 719px) {
+    main[data-scene] {
+        --depth-factor: 0.5;
+        --motion-duration: 0.8s;
+    }
+    .motion-glyph {
+        animation-duration: 0.7s;
+    }
+}
+@media (prefers-reduced-motion: reduce) {
+    @view-transition {
+        navigation: none;
+    }
+    :is(
+        .interface-enter,
+        .scroll-reveal,
+        .is-revealed,
+        .motion-glyph,
+        .motion-layer,
+        .motion-media,
+        .back-to-top
+    ) {
+        opacity: 1;
+        animation: none !important;
+        transform: none !important;
+        clip-path: none !important;
+    }
+    main[data-scene]
+        :is(.button, .vacancy-button, .contact-button, .passenger-button, .text-link)
+        > .icon {
+        transition: none;
+        transform: none !important;
+    }
+    ::view-transition-old(root),
+    ::view-transition-new(root) {
+        animation: none !important;
+    }
+}
+html[data-contrast]:not([data-contrast='normal'])
+    :is(
+        .interface-enter,
+        .scroll-reveal,
+        .is-revealed,
+        .motion-glyph,
+        .motion-layer,
+        .motion-media
+    ) {
+    opacity: 1;
+    animation: none !important;
+    transform: none !important;
+    clip-path: none !important;
+}
+html[data-contrast]:not([data-contrast='normal'])::view-transition-old(root),
+html[data-contrast]:not([data-contrast='normal'])::view-transition-new(root) {
+    animation: none !important;
+}
+html[data-contrast]:not([data-contrast='normal']) .back-to-top:not([hidden]) {
+    background: var(--color-background);
+}
+@media print {
+    :is(
+        .interface-enter,
+        .scroll-reveal,
+        .is-revealed,
+        .motion-glyph,
+        .motion-layer,
+        .motion-media
+    ) {
+        opacity: 1;
+        animation: none !important;
+        transform: none !important;
+        clip-path: none !important;
+    }
+    .back-to-top:not([hidden]) {
+        display: none;
+    }
+}
+
+/* Небольшая глубина сохраняет читаемость; курсор меняет угол, а не размер карточки. */
+.depth-hero,
+.schedule-photo {
+    overflow: clip;
+}
+.depth-photo {
+    translate: var(--photo-x, 0px) var(--photo-y, 0px);
+    scale: 1.06;
+    transform-origin: 50% 50%;
+}
+@media (hover: hover) and (pointer: fine) {
+    main[data-scene] .depth-card {
+        position: relative;
+        overflow: clip;
+        transform-style: preserve-3d;
+        transform: perspective(1200px) rotateX(var(--depth-rx, 0deg)) rotateY(var(--depth-ry, 0deg));
+        transition:
+            box-shadow 0.4s ease,
+            border-color 0.4s ease;
+    }
+    main[data-scene] .depth-card.depth-hover {
+        border-color: #a9c5c3;
+        box-shadow: 0 16px 32px -16px #1730493d;
+    }
+    .depth-card > :is(.card-body, .news-list-body, .icon-box, h3, .muted) {
+        transform: translateZ(0);
+        transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .depth-card.depth-hover > :is(.card-body, .news-list-body) {
+        transform: translateZ(14px);
+    }
+    .depth-card.depth-hover > :is(.icon-box, h3, .muted) {
+        transform: translateZ(9px);
+    }
+    main[data-scene] .depth-card:focus-within {
+        transform: none;
+        box-shadow: none;
+    }
+    .depth-card:focus-within > :is(.card-body, .news-list-body, .icon-box, h3, .muted) {
+        transform: none;
+    }
+}
+@media (prefers-reduced-motion: reduce) {
+    main[data-scene] .depth-card,
+    .depth-card > :is(.card-body, .news-list-body, .icon-box, h3, .muted),
+    .depth-photo {
+        transform: none !important;
+        translate: none !important;
+        scale: none !important;
+        transition: none !important;
+    }
+}
+html[data-contrast]:not([data-contrast='normal']) :is(.depth-card, .depth-photo),
+html[data-contrast]:not([data-contrast='normal']) .depth-card > * {
+    transform: none !important;
+    translate: none !important;
+    scale: none !important;
+    transition: none !important;
+    box-shadow: none !important;
+}
+@media print {
+    main[data-scene] .depth-card,
+    .depth-card > *,
+    .depth-photo {
+        transform: none !important;
+        translate: none !important;
+        scale: none !important;
+        box-shadow: none !important;
+    }
+}

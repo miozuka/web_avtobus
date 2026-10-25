@@ -1,0 +1,60 @@
+.agm-news-planner {
+    max-width: 1000px;
+}
+.agm-news-intro {
+    font-size: 15px;
+}
+.agm-news-plan-box,
+.agm-news-plan-item {
+    padding: 24px;
+    border: 1px solid #dcdcde;
+    border-radius: 8px;
+    background: #fff;
+    margin: 20px 0;
+}
+.agm-news-plan-box h2 {
+    margin-top: 0;
+}
+.agm-news-plan-box label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+}
+.agm-news-plan-box :is(select, input[type='date'], input[type='time']) {
+    width: 100%;
+    max-width: 100%;
+    min-height: 40px;
+}
+.agm-news-date-row {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 16px;
+    margin-top: 20px;
+    max-width: 520px;
+}
+.agm-news-plan-item h3 {
+    margin: 0;
+    overflow-wrap: anywhere;
+}
+.agm-news-plan-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    margin-top: 16px;
+}
+.agm-news-plan-actions form {
+    margin: 0;
+}
+@media (max-width: 600px) {
+    .agm-news-plan-box,
+    .agm-news-plan-item {
+        padding: 16px;
+    }
+    .agm-news-date-row {
+        grid-template-columns: 1fr;
+    }
+    .agm-news-plan-box .button {
+        margin-bottom: 8px;
+    }
+}

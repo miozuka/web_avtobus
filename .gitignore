@@ -1,0 +1,4 @@
+public/wp-config-local.php
+*.log
+.env
+.env.*

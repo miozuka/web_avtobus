@@ -1,0 +1,47 @@
+<?php
+defined('ABSPATH') || exit();
+function autobus_vacancy_settings()
+{
+    return [
+        'label' => 'Страница вакансий',
+        'fields' => [
+            'vp_eyebrow' => 'Баннер: метка',
+            'vp_title' => 'Баннер: заголовок',
+            'vp_text' => 'Баннер: описание',
+            'vp_hh_title' => 'HeadHunter: заголовок',
+            'vp_hh_text' => 'HeadHunter: описание',
+            'vp_hh_url' => ['HeadHunter: ссылка', 'url'],
+            'vp_hh_button' => 'HeadHunter: кнопка',
+            'vp_hr_title' => 'Отдел кадров: заголовок',
+            'vp_hr_text' => 'Отдел кадров: описание',
+            'vp_hr_phone' => 'Телефон отдела кадров',
+            'vp_hr_telegram_url' => ['Telegram: ссылка', 'url'],
+            'vp_hr_max_url' => ['MAX: ссылка', 'url'],
+            'vp_hr_mobile' => 'Мобильный телефон',
+            'vp_hr_email' => ['Email отдела кадров', 'email'],
+            'vp_poster' => ['Объявление предприятия', 'image'],
+            'vp_poster_title' => 'Объявление: заголовок',
+            'vp_guarantee_title' => 'Боковой блок: заголовок',
+            'vp_guarantee_text' => 'Боковой блок: описание',
+            'vp_bonus_title' => 'Бонус: заголовок',
+            'vp_bonus_text' => 'Бонус: описание',
+            'vp_jobs_title' => 'Вакансии: заголовок',
+            'vp_jobs_note' => 'Вакансии: примечание',
+            'vp_empty' => 'Нет карточек вакансий: текст',
+            'vp_training_title' => 'Обучение: заголовок',
+            'vp_training_text' => 'Обучение: описание',
+            'vp_training_button' => 'Обучение: кнопка',
+            'vp_map_title' => 'Карта: заголовок',
+            'vp_map_text' => 'Карта: описание',
+            'vp_map_address' => 'Адрес отдела кадров',
+            'vp_map_note' => 'Пояснение к адресу',
+            'vp_map_2gis_url' => ['2ГИС: ссылка', 'url'],
+            'vp_map_embed' => ['Яндекс Карта: адрес iframe', 'url'],
+            'vp_map_url' => ['Открыть Яндекс Карты: ссылка', 'url'],
+            'vp_benefits_eyebrow' => 'Преимущества: метка',
+            'vp_benefits_title' => 'Преимущества: заголовок',
+            'vp_benefits_text' => 'Преимущества: описание',
+            'vp_seo_description' => 'SEO: описание',
+        ],
+    ];
+}
